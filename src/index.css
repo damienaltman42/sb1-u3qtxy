@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Default styles for inputs */
+  input,
+  textarea {
+    @apply text-gray-900 border-gray-300 placeholder-gray-500;
+  }
+
+  /* Dark theme inputs */
+  .dark-theme input,
+  .bg-gradient-to-br input,
+  [class*="bg-gray-900"] input,
+  [class*="bg-purple-900"] input {
+    @apply text-white border-white/20 placeholder-gray-400;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Light theme inputs */
+  .light-theme input,
+  div[class*="bg-white"] input {
+    @apply text-gray-900 border-gray-300 placeholder-gray-500;
+    background-color: white;
+  }
+
+  /* Focus states */
+  input:focus,
+  textarea:focus {
+    @apply ring-2 ring-purple-500 border-transparent outline-none;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full hover:bg-white/30;
+}
